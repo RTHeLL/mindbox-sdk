@@ -95,7 +95,7 @@ class MindboxOperationsService(BaseMindboxAPIService):
         keys = clients[0].keys()
 
         f = StringIO()
-        dict_writer = csv.DictWriter(f, keys, delimiter=';')
+        dict_writer = csv.DictWriter(f, keys, delimiter=";")
         dict_writer.writeheader()
         dict_writer.writerows(clients)
 
@@ -108,5 +108,5 @@ class MindboxOperationsService(BaseMindboxAPIService):
                 "Accept": "application/json",
                 "Content-Type": "text/csv;charset=utf-8",
             },
-            data=f.getvalue(),
+            data=f.getvalue().encode("utf-8"),
         )
