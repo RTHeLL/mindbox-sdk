@@ -4,6 +4,10 @@ version = "1.0.0"
 description = ""
 authors = ["Kinder <k1ndermail@ya.ru>"]
 readme = "README.md"
+packages = [
+    { include = "mindbox-sdk" },
+    { include = "mindbox-sdk/**/*.py" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
