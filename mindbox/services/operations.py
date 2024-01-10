@@ -110,3 +110,6 @@ class MindboxOperationsService(BaseMindboxAPIService):
             },
             data=f.getvalue().encode("utf-8"),
         )
+
+    def process_operation(self, operation: str, **payload) -> Dict[str, Any]:
+        return self.request("POST", self.uri, operation=operation, payload=payload)
